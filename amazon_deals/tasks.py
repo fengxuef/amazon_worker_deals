@@ -1,11 +1,9 @@
 from celery.utils.log import get_task_logger
 logger = get_task_logger(__name__)
 from celery import Celery
-#app = Celery('listers_amazon', broker='amqp://guest@rabbitmq', backend='amqp')
 app = Celery()
 app.config_from_object('settings')
 
-#from celery.decorators import task
 from datetime import datetime
 from pymongo import MongoClient
 @app.task
